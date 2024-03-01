@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.enset.jdbc.presentation.controller.AdherentController">
+   <top>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Nom : " />
+                  <Label text="Prenom : " GridPane.rowIndex="1" />
+                  <Label text="Cin : " GridPane.rowIndex="2" />
+                  <Label text="Téléphone" GridPane.rowIndex="3" />
+                  <Label text="Email : " GridPane.rowIndex="4" />
+                  <Label text="Date de naissance" GridPane.rowIndex="5" />
+                  <TextField fx:id="textNom" GridPane.columnIndex="1" />
+                  <TextField fx:id="textPrenom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="textCin" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="textTel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="textEmail" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <DatePicker fx:id="datePicker" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                  </DatePicker>
+               </children>
+            </GridPane>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label text="Chercher :">
+                     <BorderPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </BorderPane.margin>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                   <TextField fx:id="textSearch" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin></TextField>
+                  <Button fx:id="btnAjouter" mnemonicParsing="false" onAction="#ajouter" text="Ajouter">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnSupp" mnemonicParsing="false" onAction="#supprimer" text="Supprimer">
+                     <HBox.margin>
+                        <Insets right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <BorderPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </BorderPane.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="43.0" text="ID" />
+            <TableColumn fx:id="colNom" prefWidth="107.0" text="NOM" />
+            <TableColumn fx:id="colPrenom" prefWidth="91.0" text="PRENOM" />
+            <TableColumn fx:id="colCin" prefWidth="75.0" text="CIN" />
+            <TableColumn fx:id="colTel" prefWidth="83.0" text="TELEPHONE" />
+            <TableColumn fx:id="colEmail" minWidth="0.0" prefWidth="77.0" text="EMAIL" />
+            <TableColumn fx:id="colDate" prefWidth="128.0" text="DATE DE NAISSANCE" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>
